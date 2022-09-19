@@ -931,7 +931,7 @@ public static void automaticRedial(){
     //clock settings
     public static void clock(){
         System.out.printf("%n%s%n%d: %s%n%d: %s%n%d: %s%n%d: %s%n%d: %s%n%d: %s%n%n%d: %s%n", "***CLOCK***", 1, "Alarm clock", 2, "Clock settings", 3, "Date settings", 4, "Stopwatch", 5, "Countdown timer", 6, "Auto update of time and date", 99, "Go back");
-        String display = "No information to display";
+        String display = "No information to display!";
 //        int time = 0;
         switch (enter()) {
             case 1-> {
