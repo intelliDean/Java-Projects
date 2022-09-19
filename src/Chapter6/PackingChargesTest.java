@@ -2,8 +2,6 @@ package Chapter6;
 
 import java.util.Scanner;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class PackingChargesTest {
     public static void main(String[] args) {
         PackingCharges pay = new PackingCharges();

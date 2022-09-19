@@ -1,10 +1,10 @@
-package Chapter3;
+package assignment;
 
 import chapter03.HealthProfile;
 
 import java.util.Scanner;
 
-class HealthProfileTest {
+class HealthProfileDriver {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
