@@ -1,5 +1,7 @@
 package Chapter3;
 
+import chapter03.HealthProfile;
+
 import java.util.Scanner;
 
 class HealthProfileTest {
