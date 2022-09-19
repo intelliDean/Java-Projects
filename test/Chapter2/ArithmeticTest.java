@@ -1,5 +1,6 @@
 package Chapter2;
 
+import chapter02.Arithmetic;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
