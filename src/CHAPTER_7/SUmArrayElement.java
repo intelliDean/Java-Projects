@@ -6,11 +6,12 @@ public static void main(String[] args) {
     int total = 0; // add each element's value to total
         for (int counter = 0; counter < array.length; counter++) {
              total += array[counter];
+            System.out.printf("%n%d", total);
         }
         //Enhanced for loop
 //    for (int i : array) {
 //        total += i;
 //    }
-        System.out.printf("Total of array elements: %d%n", total);
+
     }
 }
