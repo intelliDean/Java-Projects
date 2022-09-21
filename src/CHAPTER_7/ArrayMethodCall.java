@@ -18,17 +18,17 @@ public class ArrayMethodCall {
          // output modified array elements
          for (int value : array) {
             System.out.printf(" %d", value);
-
+         }
 
          System.out.printf(
                 "%n%nEffects of passing array element value:%n" +
-                       "array[3] before modifyElement: %d%n", array[3]);
+                       "array[3] before modifyElement = %d%n%n", array[3]);
 
          modifyElement(array[3]); // attempt to modify array[3]
          System.out.printf(
-                 "array[3] after modifyElement: %d%n", array[3]);
+                 "array[3] after modifyElement = %d%n%n", array[3]);
          }
-     }
+
 
 
 
