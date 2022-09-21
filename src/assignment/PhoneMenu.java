@@ -1037,7 +1037,7 @@ public static void automaticRedial(){
             case 12-> {
                 profile();
             }
-            case 99-> {
+            case 13-> {
                 simService();
             }
             default -> {
