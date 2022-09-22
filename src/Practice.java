@@ -5,6 +5,14 @@ public class Practice {
         //Create an object of Scanner to call mScanner methods
         Scanner input = new Scanner(System.in); //input is the object name of class Scanner
 
+//        for (int i =1; i <= 10; i++) {
+//            for (int a = 2; a <= 10; a = a + 1) {
+//                if (a % 2 == 0){
+//                System.out.printf("%6d", i);
+//                }
+//            }
+//        }
+
 
        /* int number = 35;
        System.out.print("Enter number: ");
