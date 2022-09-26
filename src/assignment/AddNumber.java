@@ -9,20 +9,24 @@ public class AddNumber {
         Scanner input = new Scanner(System.in);
 
 
-        int i = 0;
+//        int i = 0;
+        int num1 = 1;
+        int num2 = 1;
+        do {
+            System.out.println("Enter number 1: ");
+            num1 = input.nextInt();
 
-        do {System.out.println("Enter number: ");
-            int num1 = input.nextInt();
-            System.out.println("Enter number: ");
-            int num2 = input.nextInt();
-            System.out.println(num1 + num2);
+            System.out.println("Enter number 2: ");
+            num2 = input.nextInt();
 
-            System.out.println("\nPress 1 to continue ");
-            int answer = input.nextInt();
-            if (answer == 1) {
-                i++;
-            } else break;
+            System.out.printf("%n%d + %d = %d%n%n", num1, num2, num1 + num2);
+
+//            System.out.println("\nPress 1 to continue ");
+//            int answer = input.nextInt();
+//            if (answer == 1) {
+//                i++;
+//            } else break;
         }
-        while (i > 0);
+        while (num2 != -1);
         }
 }

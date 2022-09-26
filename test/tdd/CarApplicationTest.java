@@ -1,3 +1,6 @@
+package tdd;
+
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -30,37 +33,37 @@ class CarApplicationTest {
     @Test
     void testCar1HasModel(){
         car1.setModel("Aston Martin");
-        assertEquals("Aston Martin", car1.getModel());
+        Assertions.assertEquals("Aston Martin", car1.getModel());
     }
     @Test
     void testCar2HasModel (){
         car2.setModel("Bra Bus");
-        assertEquals("Bra Bus", car2.getModel());
+        Assertions.assertEquals("Bra Bus", car2.getModel());
     }
     @Test
     void testCar1Year(){
         car1.setYear("2032");
-        assertEquals("2032", car1.getYear());
+        Assertions.assertEquals("2032", car1.getYear());
     }
     @Test
     void testCar2Model(){
         car2.setModel("2023");
-        assertEquals("2023", car2.getYear());
+        Assertions.assertEquals("2023", car2.getYear());
     }
     @Test
     void testCar1Price(){
         car1.setPrice(230000);
-        assertEquals(230000, car1.getPrice());
+        Assertions.assertEquals(230000, car1.getPrice());
     }
     @Test
     void testCar2Price(){
         car2.setPrice(300000);
-        assertEquals(300000, car2.getPrice());
+        Assertions.assertEquals(300000, car2.getPrice());
     }
     @Test
     void checkForDiscountAmount(){
         car1.getPurchaseAmount();
-        assertEquals(218500, car1.getPurchaseAmount());
+        Assertions.assertEquals(218500, car1.getPurchaseAmount());
     }
 
 

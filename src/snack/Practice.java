@@ -1,3 +1,5 @@
+package snack;
+
 import java.util.Scanner;
 
 public class Practice {

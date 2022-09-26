@@ -2,7 +2,7 @@ package assignment;
 
 import java.util.Scanner;
 
-public class MinMax {
+public class   MinMax {
     Scanner scan=new Scanner(System.in);
     public static void main(String[]args) {
 

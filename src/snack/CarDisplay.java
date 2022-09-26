@@ -1,3 +1,5 @@
+package snack;
+
 import java.security.SecureRandom;
 
 public class CarDisplay {

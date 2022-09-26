@@ -1,3 +1,5 @@
+package snack;
+
 import Nokia3310.PhoneMenu;
 
 public class PhoneDriver {
