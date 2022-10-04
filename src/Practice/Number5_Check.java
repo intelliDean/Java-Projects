@@ -7,6 +7,7 @@ public class Number5_Check { // to check how many 5 are there in the number inpu
         Scanner input = new Scanner(System.in);
 
         System.out.println("input number");
+
         long num = input.nextLong(); // capture the number from user
         long temp = num; // transfer the number into another variable for later usage
 

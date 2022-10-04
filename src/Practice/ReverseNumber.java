@@ -16,7 +16,7 @@ public class ReverseNumber {
             a = a * 10 + rem;
             count++;
 
-            num /=10;
+            num /= 10;
         }
         System.out.printf("The reverse of %d is % d%n", temp, a);
     }

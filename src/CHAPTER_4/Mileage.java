@@ -15,12 +15,12 @@ public class Mileage {
         double totalGallon = 0;
 
         for (int i = 1; i > 0; i++){
-            System.out.println("Enter miles travelled : ");
+            System.out.println("Enter miles travelled");
             double miles = input.nextDouble();
             if (miles != -1){
             totalMiles += miles;
 
-            System.out.println("\nEnter gallons used: ");
+            System.out.println("\nEnter gallons used");
             double gallons= input.nextDouble();
             totalGallon += gallons;
             System.out.printf("%nMiles per gallon for this trip = %.2f%n%n", (miles / gallons));
@@ -29,4 +29,18 @@ public class Mileage {
         double average = totalMiles/totalGallon;
         System.out.printf("%nTotal Miles per gallons = %.2f%n%n", average);
         }
+
+
+
+
+
+
+//          ARRAY MANIPULATION (SWAPPING PLACE)
+//        for (int i = 0; i < array.length; i++) {
+//            for (j = i + 1; array.length; j++) {
+//                temp = array [j];
+//                array[j] = array[i];
+//                array [i] = temp;
+//            }
+//    }
     }

@@ -6,6 +6,20 @@ public class Practice {
     public static void main(String[] args) {
         //Create an object of Scanner to call mScanner methods
         Scanner input = new Scanner(System.in); //input is the object name of class Scanner
+        for (int i = 1; i <= 1; i++) {
+            for(int o = 1; o <= 4; o++ ) {
+                if (o % 2 == 0) {
+                    System.out.println(o+ " song");} //this executes under the condition of the if statement and not the condition of the loop
+                for (int j = 1; j <= 10; j++) {
+                    System.out.print(j + " ");
+                }
+                System.out.println();
+                for (int k = 10; k >= 1; k--) {
+                    System.out.print(k + " ");
+                }
+                System.out.println("\n");
+            }
+        }
 
 //        for (int i =1; i <= 10; i++) {
 //            for (int a = 2; a <= 10; a = a + 1) {
@@ -348,11 +362,11 @@ public class Practice {
       }
       System.out.printf("%nUsed continue to skip printing 5%n");*/
 
-        int count = 1;
-        do{
-            System.out.print(count+ " ");
-            count++;
-        } while (count <= 10);
+//        int count = 1;
+//        do{
+//            System.out.print(count+ " ");
+//            count++;
+//        } while (count <= 10);
 
     }
 }
