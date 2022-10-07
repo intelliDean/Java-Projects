@@ -48,6 +48,13 @@ public class LoopPractice {
             System.out.println("No grades!");
         }
     }
+    public static void sum (int a, int b) {
+      try{
+          System.out.println(a + b);
+      } catch (IllegalArgumentException ignored) {
+
+      }
+    }
 
 
     public static void main(String[] args) {
@@ -82,6 +89,13 @@ public class LoopPractice {
         } else {
             System.out.println("\n\nYou didn't make your instructor proud");
         }
+
+        int d = Integer.parseInt(input.next());
+        var h = input.next();
+
+//        String j = "Horse";
+//        System.out.println(j.charAt(2));
+
 
     }
 }
