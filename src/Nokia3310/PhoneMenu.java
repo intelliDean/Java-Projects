@@ -1177,7 +1177,6 @@ public class PhoneMenu {
 
     public static void calc() {
         Scanner input = new Scanner(System.in);
-        int ans;
         System.out.println("""             
                                     
                 1: ➕ Addition
@@ -1195,26 +1194,27 @@ public class PhoneMenu {
             System.out.println("\nInput two numbers");
             int a = input.nextInt();
             int b = input.nextInt();
+            double ans;
             switch (op) {
                 case 1 -> {
                     ans = a + b;
-                    System.out.printf("%d + %d = %d%n ", a, b, ans);
+                    System.out.printf("%d + %d = %.1f%n ", a, b, ans);
                     calc();
                 }
                 case 2 -> {
                     ans = a - b;
-                    System.out.printf("%d - %d = %d%n ", a, b, ans);
+                    System.out.printf("%d - %d = %.1f%n ", a, b, ans);
                     calc();
                 }
                 case 3 -> {
                     ans = a * b;
-                    System.out.printf("%d * %d = %d%n ", a, b, ans);
+                    System.out.printf("%d * %d = %.1f%n ", a, b, ans);
                     calc();
                 }
                 case 4 -> {
-                    if (a != 0 || b != 0) {
+                    if (b != 0) {
                         ans = a / b;
-                        System.out.printf("%d ÷ %d = %d%n ", a, b, ans);
+                        System.out.printf("%d ÷ %d = %.1f%n ", a, b, ans);
                         calc();
                     }
                 }
@@ -1226,9 +1226,6 @@ public class PhoneMenu {
             }
         } else calculator();
     }
-
-
-
     public static void reminders(){
         System.out.printf("%n%s%n%d: %s%n",
                 "***REMINDERS***", 1, "Go back");

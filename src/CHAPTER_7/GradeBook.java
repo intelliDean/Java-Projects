@@ -2,10 +2,10 @@ package CHAPTER_7;
 
 public class GradeBook {
     private String courseName; // name of course this GradeBook represents
-     private int [] grades; // array of student grades
+     private final int[][] grades; // array of student grades
 
          // constructor
-         public GradeBook(String courseName, int [] grades) {
+         public GradeBook(String courseName, int[][] grades) {
             this.courseName = courseName;
             this.grades = grades;
          }
@@ -20,94 +20,114 @@ public class GradeBook {
             return courseName;
          }
 
-         // perform various operations on the data
-         public void processGrades() {
-             outputGrades();  // output grades array
-
-                // call method getAverage to calculate the average grade
-             System.out.printf("%nClass average is %.2f%n", getAverage());
-
-                // call methods getMinimum and getMaximum
-             System.out.printf("Lowest grade is %d%nHighest grade is %d%n%n",getMinimum(), getMaximum() );
-             outputBarChart();      // call outputBarChart to print grade distribution chart
-
-         }
-
+            // perform various operations on the data
+            // perform various operations on the data
+     public void processGrades() {
+            // output grades array
+         outputGrades();
+            // call methods getMinimum and getMaximum
+         System.out.printf("%n%s %d%n%s %d%n%n",
+                 "Lowest grade in the grade book is", getMinimum(),
+                 "Highest grade in the grade book is", getMaximum());
+            // output grade distribution chart of all grades on all tests
+         outputBarChart();
+     }
             // find minimum grade
-         public int getMinimum() {
-         int lowGrade = grades[0]; // assume grades[0] is smallest
-                 // loop through grades array
-             for (int grade : grades) {
-                // if grade lower than lowGrade, assign it to lowGrade
-                 if (grade < lowGrade) {
-                     lowGrade = grade; // new lowest grade
-                 }
-            }
-            return lowGrade;
-        }
+            // find minimum grade
+     public int getMinimum() {
+            // assume first element of grades array is smallest
+         int lowGrade = grades[0][0];
+                // loop through rows of grades array
+         for (int[] studentGrades : grades) {
+                // loop through columns of current row
+              for (int grade : studentGrades) {
+                   // if grade less than lowGrade, assign it to lowGrade
+                  if (grade < lowGrade) {
+                       lowGrade = grade;
+                  }
+              }
+         }
+         return lowGrade;
+     }
 
             // find maximum grade
-         public int getMaximum() {
-         int highGrade = grades[0]; // assume grades[0] is largest
-
-             // loop through grades array
-            for (int grade : grades) {
-                // if grade greater than highGrade, assign it to highGrade
-                if (grade > highGrade) {
-                    highGrade = grade; // new highest grade
+     public int getMaximum() {
+            // assume first element of grades array is largest
+           int highGrade = grades[0][0];
+                // loop through rows of grades array
+           for (int[] studentGrades : grades) {
+                // loop through columns of current row
+                for (int grade : studentGrades) {
+                      // if grade greater than highGrade, assign it to highGrade
+                     if (grade > highGrade) {
+                          highGrade = grade;
+                     }
+                }
+           }
+           return highGrade;
+     }
+            // determine average grade for particular set of grades
+     public double getAverage(int[] setOfGrades) {
+          int total = 0;
+           // sum grades for one student
+          for (int grade : setOfGrades) {
+              total += grade;
+          }
+            // return average of grades
+          return (double) total / setOfGrades.length;
+     }
+                // output bar chart displaying overall grade distribution
+     public void outputBarChart() {
+            System.out.println("Overall grade distribution:");
+                // stores frequency of grades in each range of 10 grades
+            int[] frequency = new int[11];
+                // for each grade in GradeBook, increment the appropriate frequency
+            for (int[] studentGrades : grades) {
+                for (int grade : studentGrades) {
+                    ++frequency[grade / 10];
                 }
             }
-            return highGrade;
-         }
-
-            // determine average grade for test
-         public double getAverage() {
-         int total = 0;
-                // sum grades for one student
-             for (int grade : grades) {
-                 total += grade; //the int grade is not a counter but individual grades in the grades element
+                // for each grade frequency, print bar in chart
+            for (int count = 0; count < frequency.length; count++) {
+                    // output bar label ("00-09: ", ..., "90-99: ", "100: ")
+                if (count == 10) {
+                    System.out.printf("%5d: ", 100);
+                }
+                else {
+                    System.out.printf("%02d-%02d: ",
+                            count * 10, count * 10 + 9);
+                }
+                    // print bar of asterisks
+                for (int stars = 0; stars < frequency[count]; stars++) {
+                        System.out.print("*");
+                }
+                System.out.println();
             }
-                // return average of grades
-             return (double) total /grades.length;
-         }
-                // output bar chart displaying grade distribution
-     public void outputBarChart() {
-         System.out.println("Grade distribution:");
-
-             // stores frequency of grades in each range of 10 grades
-         int[] frequency = new int[11];
-            // for each grade, increment the appropriate frequency
-         for (int grade : grades) {
-            ++frequency[grade / 10];
-         }
-            // for each grade frequency, print bar in chart
-         for (int count = 0; count < frequency.length; count++) {
-             // output bar label ("00-09: ", ..., "90-99: ", "100: ")
-             if (count == 10) {
-                System.out.printf("%5d: ", 100);
-             }
-             else {
-             System.out.printf("%02d-%02d: ", count * 10, count * 10 + 9);
-             }
-
-                // print bar of asterisks
-             for (int stars = 0; stars < frequency[count]; stars++) {
-                 System.out.print("*");
-             }
-
-             System.out.println();
-         }
      }
 
-     public void outputGrades() { // output the contents of the grades array
-             System.out.printf("The grades are:%n%n");
 
-            // output each student's grade
-         for (int student = 0; student < grades.length; student++) {
-             System.out.printf("Student %2d: %3d%n", student + 1, grades[student]);
-            }
+            // output the contents of the grades array
+     public void outputGrades() {
+           System.out.printf("The grades are:%n%n");
+                System.out.print(" "); // align column heads
+            // create a column heading for each of the tests
+           for (int test = 0; test < grades[0].length; test++) {
+                System.out.printf("\t\tTest %d ", test + 1);
+           }
+
+                System.out.println("Average"); // student average column heading
+
+                // create rows/columns of text representing array grades
+           for (int student = 0; student < grades.length; student++) {
+                System.out.printf("Student %02d", student + 1);
+
+                for (int test : grades[student]) { // output student's grades
+                     System.out.printf("%8d", test);
+                }
+                     // call method getAverage to calculate student's average grade;
+                     // pass row of grades as the argument to getAverage
+                double average = getAverage(grades[student]);
+                System.out.printf("%9.2f%n", average);
+           }
      }
 }
-
-
-
