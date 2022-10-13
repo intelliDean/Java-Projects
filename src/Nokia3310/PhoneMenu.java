@@ -1216,6 +1216,8 @@ public class PhoneMenu {
                         ans = a / b;
                         System.out.printf("%d ÷ %d = %.1f%n ", a, b, ans);
                         calc();
+                    } else {
+                        System.out.println("Invalid denominator");
                     }
                 }
                 case 5 -> {

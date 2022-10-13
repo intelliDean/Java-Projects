@@ -19,10 +19,14 @@ public class Loops {
 //        for (int j = 2; j <= put; j++){
 //            System.out.println(j);
 //        }
-        int put = 1;
-        do {
-            System.out.println("\nEnter number");
-            put = input.nextInt();
-        } while (put != -1);
+//        int put = 1;
+//        do {
+//            System.out.println("\nEnter number");
+//            put = input.nextInt();
+//        } while (put != -1);
+        for (int i = 0; i < 8; i++) {
+            System.out.println("* ".repeat(i));
+
+        }
     }
 }
