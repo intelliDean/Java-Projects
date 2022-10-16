@@ -15,7 +15,7 @@ public class DiceGame {
             DiceGame.age = age;
         }
         else {
-            System.out.print("            You are below 18");
+            System.out.print("You are below 18");
             System.exit(0);
         }
     }

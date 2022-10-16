@@ -22,7 +22,8 @@ public class OkoClass {
     }
 
     public void deposit(double depositAmount){
-        if (depositAmount >= 500){ deposit = depositAmount;
+        if (depositAmount >= 500){
+            deposit = depositAmount;
         } else {
             System.out.println("Your deposit is too low. Minimum deposit is #500");
         }

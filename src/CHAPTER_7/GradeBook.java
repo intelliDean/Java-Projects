@@ -2,7 +2,7 @@ package CHAPTER_7;
 
 public class GradeBook {
     private String courseName; // name of course this GradeBook represents
-     private final int[][] grades; // array of student grades
+    private final int[][] grades; // array of student grades
 
          // constructor
          public GradeBook(String courseName, int[][] grades) {
@@ -22,7 +22,7 @@ public class GradeBook {
 
             // perform various operations on the data
             // perform various operations on the data
-     public void processGrades() {
+    public void processGrades() {
             // output grades array
          outputGrades();
             // call methods getMinimum and getMaximum
@@ -31,10 +31,10 @@ public class GradeBook {
                  "Highest grade in the grade book is", getMaximum());
             // output grade distribution chart of all grades on all tests
          outputBarChart();
-     }
+    }
             // find minimum grade
             // find minimum grade
-     public int getMinimum() {
+    public int getMinimum() {
             // assume first element of grades array is smallest
          int lowGrade = grades[0][0];
                 // loop through rows of grades array
@@ -48,10 +48,10 @@ public class GradeBook {
               }
          }
          return lowGrade;
-     }
+    }
 
             // find maximum grade
-     public int getMaximum() {
+    public int getMaximum() {
             // assume first element of grades array is largest
            int highGrade = grades[0][0];
                 // loop through rows of grades array
@@ -65,9 +65,9 @@ public class GradeBook {
                 }
            }
            return highGrade;
-     }
+    }
             // determine average grade for particular set of grades
-     public double getAverage(int[] setOfGrades) {
+    public double getAverage(int[] setOfGrades) {
           int total = 0;
            // sum grades for one student
           for (int grade : setOfGrades) {
@@ -75,9 +75,9 @@ public class GradeBook {
           }
             // return average of grades
           return (double) total / setOfGrades.length;
-     }
+    }
                 // output bar chart displaying overall grade distribution
-     public void outputBarChart() {
+    public void outputBarChart() {
             System.out.println("Overall grade distribution:");
                 // stores frequency of grades in each range of 10 grades
             int[] frequency = new int[11];
@@ -103,11 +103,11 @@ public class GradeBook {
                 }
                 System.out.println();
             }
-     }
+    }
 
 
             // output the contents of the grades array
-     public void outputGrades() {
+    public void outputGrades() {
            System.out.printf("The grades are:%n%n");
                 System.out.print(" "); // align column heads
             // create a column heading for each of the tests
@@ -129,5 +129,5 @@ public class GradeBook {
                 double average = getAverage(grades[student]);
                 System.out.printf("%9.2f%n", average);
            }
-     }
+    }
 }

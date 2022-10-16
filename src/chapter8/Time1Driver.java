@@ -10,8 +10,8 @@ public class Time1Driver {
 
             // change time and output updated time
         time.setTime(13, 27, 6);
-        displayTime("After calling setTime", time);
-            System.out.println();
+        displayTime("After calling method setTime", time);
+        System.out.println();
 
          // attempt to set time with invalid values
         try {

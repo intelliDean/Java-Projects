@@ -1,13 +1,11 @@
-/*package assignment;
+package assignment;
 
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-
-
 public class DiceGameTest {
     @Test
-    public void setNameTest(){
+    void setNameTest() {
         DiceGame craps = new DiceGame();
         String John = new String();
         craps.setName(John);
@@ -69,4 +67,4 @@ public class DiceGameTest {
         craps.withdraw(800);
         assertEquals(200, craps.getBalance());
     }
-}*/
+}
