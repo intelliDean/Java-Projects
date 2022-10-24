@@ -48,10 +48,26 @@ line begin with an appropriate number of blank spaces.]*/
 
         }
     }
+//    public static void square(){
+//        int space = 6;
+//        for (int i = 8; i > 0; i--) {
+//            for (int j = 1; j < space; j++) {
+//
+//            }
+//            for (int j = i; j < 8; j++) {
+//                System.out.print("* ");
+//            }
+//            for (int j = 0; j < ; j++) {
+//
+//            }
+//
+//            System.out.println();
+//        }
+//    }
 
     public static void main(String[] args) {
 
-        sidedTriangle();
+
 
 
     }

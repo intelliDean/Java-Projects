@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class PhoneDriver {
     static Scanner input = new Scanner(System.in);
-    public static String display = "No information to display";
+    public static final String DISPLAY = "No information to display";
 
     public static void main(String[] args) {
         System.out.printf("%n%34s%n%s%n", "WELCOME TO DEAN'S PHONE MENU",
@@ -45,7 +45,7 @@ public class PhoneDriver {
                 case 12 -> Profile.profile();
                 case 13 -> SimService.simService();
                 default -> {
-                    System.out.printf("%n%s%n", display);
+                    System.out.printf("%n%s%n", DISPLAY);
                     Menu.menu();
                 }
             }

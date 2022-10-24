@@ -44,9 +44,6 @@ public class TwelveDaysOdChristmas {
                     System.out.println("𝓪 𝓹𝓪𝓻𝓽𝓻𝓲𝓭𝓰𝓮 𝓲𝓷 𝓪 𝓹𝓮𝓪𝓻 𝓽𝓻𝓮𝓮.");
             }
                 System.out.println();
-        } else
-            if (day == -1) {
-                System.out.print("");
         } else {
             System.out.printf("%nOde, there's no %d day of Christmas%nChoose between 1 & 12%n%n", day);
         }

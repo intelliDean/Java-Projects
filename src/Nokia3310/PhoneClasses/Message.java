@@ -35,7 +35,7 @@ public class Message {
             case 10 -> serviceCommandEditor();
             case 99 -> menu();
             default -> {
-                System.out.println(display);
+                System.out.println(DISPLAY);
                 message();
             }
         }
@@ -112,7 +112,7 @@ public class Message {
             case 2 -> common();
             case 99 -> message();
             default -> {
-                System.out.println(display);
+                System.out.println(DISPLAY);
                 menu();
             }
         }
@@ -132,7 +132,7 @@ public class Message {
             case 3 -> messageValidity();
             case 99 -> messageSetting();
             default -> {
-                System.out.println(display);
+                System.out.println(DISPLAY);
                 menu();
             }
         }
@@ -175,7 +175,7 @@ public class Message {
             case 3 -> characterSupport();
             case 99 -> messageSetting();
             default -> {
-                System.out.println(display);
+                System.out.println(DISPLAY);
                 menu();
             }
         }

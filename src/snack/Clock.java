@@ -15,57 +15,62 @@ public class Clock {
     private int second;
     private String time;
 
-    public Clock(int hour, int minute, int second){
-        if (hour > 23){
+    public Clock(int hour, int minute, int second) {
+        if (hour > 23) {
             this.hour = 0;
         } else this.hour = hour;
-        if (minute > 59){
-            this.minute =0;
+        if (minute > 59) {
+            this.minute = 0;
         } else this.minute = minute;
-        if (second > 59){
+        if (second > 59) {
             this.second = 0;
         } else this.second = second;
     }
-    public void setHour(int hour){
+
+    public void setHour(int hour) {
         if (hour > 23) {
             this.hour = 0;
         } else this.hour = hour;
     }
-    public int getHour(){
+
+    public int getHour() {
         return hour;
     }
-    public void setMinute(int minute){
-        if(minute > 59){
+
+    public void setMinute(int minute) {
+        if (minute > 59) {
             this.minute = 0;
         } else this.minute = minute;
     }
-    public int getMinute(){
+
+    public int getMinute() {
         return minute;
     }
-    public void setSecond(int second){
-        if(second > 59){
+
+    public void setSecond(int second) {
+        if (second > 59) {
             this.second = 0;
         } else this.second = second;
     }
-    public int getSecond(){
+
+    public int getSecond() {
         return second;
     }
 
     public void setTime(int hour, int minute, int second) {
-        time = hour+":"+minute+":"+second;
+        time = hour + ":" + minute + ":" + second;
     }
+
     public String displayTime() {
         return time;
         //return getHour()+":"+getMinute()+":"+getSecond();
     }
 
 
-
-
     public static void main(String[] args) {
-        Clock ago = new Clock(4,34,14);
+        Clock ago = new Clock(4, 34, 14);
 
-        System.out.println("The time is "+ ago.displayTime());
+        System.out.println("The time is " + ago.displayTime());
 
 
         Scanner input = new Scanner(System.in);
@@ -78,7 +83,7 @@ public class Clock {
         ago.setMinute(minute);
         ago.setSecond(second);
 
-        System.out.println("The new set time is "+ ago.displayTime());
+        System.out.println("The new set time is " + ago.displayTime());
     }
 
 }

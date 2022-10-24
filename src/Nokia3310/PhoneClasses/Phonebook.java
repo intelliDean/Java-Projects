@@ -3,7 +3,7 @@ package Nokia3310.PhoneClasses;
 import java.util.Scanner;
 
 import static Nokia3310.PhoneClasses.Menu.menu;
-import static Nokia3310.PhoneDriver.display;
+import static Nokia3310.PhoneDriver.DISPLAY;
 import static Nokia3310.PhoneDriver.enter;
 
 public class Phonebook {
@@ -36,7 +36,7 @@ public class Phonebook {
             case 10 -> voiceTags();
             case 99 -> menu();
             default -> {
-                System.out.println(display);
+                System.out.println(DISPLAY);
                 phone();
             }
         }
@@ -120,7 +120,7 @@ public class Phonebook {
             case 2 -> memoryStatus();
             case 99 -> phone();
             default -> {
-                System.out.printf("%n%s%n", display);
+                System.out.printf("%n%s%n", DISPLAY);
                 menu();
             }
         }

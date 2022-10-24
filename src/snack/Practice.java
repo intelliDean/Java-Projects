@@ -7,9 +7,10 @@ public class Practice {
         //Create an object of Scanner to call mScanner methods
         Scanner input = new Scanner(System.in); //input is the object name of class Scanner
         for (int i = 1; i <= 1; i++) {
-            for(int o = 1; o <= 4; o++ ) {
+            for (int o = 1; o <= 4; o++) {
                 if (o % 2 == 0) {
-                    System.out.println(o+ " song");} //this executes under the condition of the if statement and not the condition of the loop
+                    System.out.println(o + " song");
+                } //this executes under the condition of the if statement and not the condition of the loop
                 for (int j = 1; j <= 10; j++) {
                     System.out.print(j + " ");
                 }

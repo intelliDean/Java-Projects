@@ -24,7 +24,7 @@ public class Clock {
             case 6 -> autoUpdateOfDateAndTime();
             case 99 -> menu();
             default -> {
-                System.out.println(display);
+                System.out.println(DISPLAY);
                 clock();
             }
         }

@@ -29,7 +29,7 @@ public class DiceDriver {
         System.out.printf("%nName: %s    Age: %d    Balance: %,.1fNGN%n",
                 DiceGame.getName(), DiceGame.getAge(), DiceGame.getBalance());
         int i;
-        for (int a = 0; a<= 3; a++) {
+        for (int a = 0; a <= 3; a++) {
             System.out.print("press 1 to play or 0 to exit  ");
             i = input.nextInt();
             if (i == 1) TheCrapsGame.play();

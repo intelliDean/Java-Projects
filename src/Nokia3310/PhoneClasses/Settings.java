@@ -21,7 +21,7 @@ public class Settings {
             case 4 ->  restoreFactorySettings();
             case 99 -> menu();
             default -> {
-                System.out.println(display);
+                System.out.println(DISPLAY);
                 settings();
             }
         }
@@ -57,7 +57,7 @@ public class Settings {
             case 6 -> changeAccessCode();
             case 99 -> settings();
             default -> {
-                System.out.println(display);
+                System.out.println(DISPLAY);
                 securitySettings();
             }
         }
@@ -132,7 +132,7 @@ public class Settings {
             case 6 -> confirmSIMServiceAction();
             case 99 -> settings();
             default -> {
-                System.out.println(display);
+                System.out.println(DISPLAY);
                 phoneSetting();
             }
         }
@@ -207,7 +207,7 @@ public class Settings {
             case 6 -> automaticAnswer();
             case 99 -> settings();
             default -> {
-                System.out.println(display);
+                System.out.println(DISPLAY);
                 callSetting();
             }
         }

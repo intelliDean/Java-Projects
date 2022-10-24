@@ -8,13 +8,14 @@ public class ChristmasSongDriver {
 
         int day = 0;
         System.out.print("""
-        
+
         Input day of Christmas
         or press -1 to quit
         """);
+        day = input.nextInt();
         while (day != -1) {
-            day = input.nextInt();
             TwelveDaysOdChristmas.daysOfChristmas(day);
+            day = input.nextInt();
         }
     }
 }

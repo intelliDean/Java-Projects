@@ -8,6 +8,7 @@ public class CharArray {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter arrays of char");
         String ray = input.nextLine(); //String is actually an array of char. so passing a string into an array of char will put them into an array of string
+
         System.out.println("\nThis is the string of the char array");
         System.out.println(charArray(ray.toCharArray()));   //this will output the string of chains of array
         System.out.println("\nThe array version\n"+Arrays.toString(ray.toCharArray()));

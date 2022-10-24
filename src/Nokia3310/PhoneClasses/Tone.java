@@ -31,7 +31,7 @@ public class Tone {
             case 9 -> screenSaver();
             case 99 -> menu();
             default -> {
-                System.out.println(display);
+                System.out.println(DISPLAY);
                 tone();
             }
         }

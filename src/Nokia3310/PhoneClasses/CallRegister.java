@@ -29,7 +29,7 @@ public class CallRegister {
             case 8 -> prepaidCredit();
             case 99 -> menu();
             default -> {
-                System.out.println(display);
+                System.out.println(DISPLAY);
                 callRegister();
             }
         }
@@ -89,7 +89,7 @@ public class CallRegister {
             case 3 -> clearCounters();
             case 99 -> callRegister();
             default -> {
-                System.out.println(display);
+                System.out.println(DISPLAY);
                 showCallCost();
             }
         }
@@ -132,7 +132,7 @@ public class CallRegister {
             case 2 -> showCostIn();
             case 99 -> callRegister();
             default -> {
-                System.out.println(display);
+                System.out.println(DISPLAY);
                 callCostSetting();
             }
         }
@@ -172,7 +172,7 @@ public class CallRegister {
             case 5 -> callTimers();
             case 99 -> callRegister();
             default -> {
-                System.out.println(display);
+                System.out.println(DISPLAY);
                 showCallDuration();
             }
         }

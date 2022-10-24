@@ -15,7 +15,7 @@ public class FibonacciNumber { // fibonacci number takes the sum of two previous
             int c = b; // c is brought in to temporarily take the value of b
             b = a + b; // b is given value of a + b
             a = c; // a takes the former value of b stored in c
-            System.out.print(b+" ");
+            System.out.print(b + " ");
         }
         //System.out.printf("%nThe %d fibonacci number = %,d%n", num, b);
     }
