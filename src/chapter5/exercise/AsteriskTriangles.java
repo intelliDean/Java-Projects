@@ -66,7 +66,7 @@ line begin with an appropriate number of blank spaces.]*/
 //    }
 
     public static void main(String[] args) {
-
+        invertedSidedTriangle();
 
 
 

@@ -30,17 +30,4 @@ public class Mileage {
         System.out.printf("%nTotal Miles per gallons = %.2f%n%n", average);
         }
 
-
-
-
-
-
-//          ARRAY MANIPULATION (SWAPPING PLACE)
-//        for (int i = 0; i < array.length; i++) {
-//            for (j = i + 1; array.length; j++) {
-//                temp = array [j];
-//                array[j] = array[i];
-//                array [i] = temp;
-//            }
-//    }
     }

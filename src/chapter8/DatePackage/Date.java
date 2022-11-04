@@ -7,35 +7,45 @@ public class Date {
     private static final int[] daysPerMonth = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
          // constructor: confirm proper value for month and day given the year
+
+    public Date(int day, int month) {
+        this(day, month, 0);
+    }
     public Date(int day, int month,  int year) {
-         // check if month in range
-         if (month <= 0 || month > 12) {
-             throw new IllegalArgumentException(
-                     "month (" + month + ") must be 1-12");
-         }
-
-         // check if day in range for month
-         if (day <= 0 || (day > daysPerMonth[month] && !(month == 2 && day == 29))) {
-             throw new IllegalArgumentException("day (" + day +
-                     ") out-of-range for the specified month and year");
-         }
-
-         // check for leap year if month is 2 and day is 29
-         if (month == 2 && day == 29 && !(year % 400 == 0 ||
-                 (year % 4 == 0 && year % 100 != 0))) {
-             throw new IllegalArgumentException("day (" + day +
-                    ") out-of-range for the specified month and year");
-         }
-
+        validateDay(day, month);
+        validateMonth(day, month, year);
+        validYear(day, month, year);
         this.day = day;
         this.month = month;
         this.year = year;
 
          System.out.printf("Date object constructor for date:  %s%n",this);
     }
+    public void setDate(int day, int month, int year) {
+        validateDay(day, month);
+        validateMonth(day, month, year);
+        validYear(day, month, year);
+        this.day = day;
+        this.month = month;
+        this.year = year;
+    }
 
          // return a String of the form month/day/year
     public String toString() {
-         return String.format("%d/%d/%d", month, day, year);
+         return String.format("%02d/%02d/%02d", day, month, year);
+    }
+
+    public void validateMonth(int day, int month, int year) {
+        boolean isInvalid = month == 2 && day == 29 && !(year % 400 == 0 || (year % 4 == 0 && year % 100 != 0));
+        if (isInvalid) throw new IllegalArgumentException("day (" + day + ") out-of-range for the specified month and year");
+    }
+    public void validateDay(int day, int month) {
+        boolean isInvalid = day <= 0 || (day > daysPerMonth[month] && !(month == 2 && day == 29));
+        if (isInvalid) throw new IllegalArgumentException("day (" + day + ") " +
+                "out-of-range for the specified month and year");
+    }
+    public void validYear(int day, int month, int year) {
+        boolean isInvalid = month == 2 && day == 29 && !(year % 400 == 0 || (year % 4 == 0 && year % 100 != 0));
+        if (isInvalid) throw new IllegalArgumentException("day (" + day + ") out-of-range for the specified month and year");
     }
 }

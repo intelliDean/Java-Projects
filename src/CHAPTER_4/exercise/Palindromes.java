@@ -1,6 +1,6 @@
 package CHAPTER_4.exercise;
 
-import java.util.Scanner;
+import java.util.Arrays;
 
 public class Palindromes {
     /*(Palindromes) A palindrome is a sequence of characters that reads the same backward as forward.
@@ -8,7 +8,7 @@ public class Palindromes {
 and 11611. Write an application that reads in a five-digit integer and determines whether it’s
 a palindrome. If the number is not five digits long, display an error message and allow the user to enter
 a new value.*/
-    public static void intPalindromes(int number) {
+    public static boolean intPalindromes(int number) {
         int r, sum = 0, temp; // short and concise style of declaring and initializing variables
         temp = number; // store number in a temporary variable to be used to compare later
         while (number > 0) {
@@ -17,10 +17,7 @@ a new value.*/
             number = number / 10;
         }
         System.out.println(sum);
-        if (temp == sum)
-            System.out.println("palindrome number");
-        else
-            System.out.println("not palindrome");
+        return temp == sum;
     }
     public static void stringPalindromes(String original) {
         StringBuilder reverse = new StringBuilder(); // Object of String class
@@ -31,15 +28,34 @@ a new value.*/
              System.out.println("\nEntered string/number is a palindrome.");
          else
              System.out.println("\nEntered string/number isn't a palindrome.");
+
+
+
     }
     public static void main(String[] args){
-        Scanner input = new Scanner(System.in);
-        System.out.println("""
-                
-                Enter 5 digits number to check
-                if it is a palindrome number""");
-       String ori = input.nextLine();
-        stringPalindromes(ori);
+//        Scanner input = new Scanner(System.in);
+//        System.out.println("""
+//
+//                Enter 5 digits number to check
+//                if it is a palindrome number""");
+//       int ori = input.nextInt();
+//       boolean res = intPalindromes(ori);
+//        System.out.println(res);
+//        stringPalindromes(ori);
+        String cha = "madan";
+        boolean wink = ch(cha);
+        System.out.println(wink);
+
+
+    }
+    public static boolean ch(String name){
+        char[] n = name.toCharArray();
+        char[] k = new char[n.length];
+        for (int i = 0, j = n.length - 1; i < n.length; i++, j--) {
+            k[i] = n[j];
+
+        }
+        return Arrays.equals(k, n);
 
     }
 
