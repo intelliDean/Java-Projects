@@ -7,7 +7,7 @@ public class SumTwoLargestNumber {
         System.out.println(arr);
     }
     public static int twoLargest(int[] arrays) {
-        SwapArray.swapArray(arrays);
+        SwapArray.sortingArray(arrays);
         return arrays[arrays.length - 1] + arrays[arrays.length - 2];
     }
 }

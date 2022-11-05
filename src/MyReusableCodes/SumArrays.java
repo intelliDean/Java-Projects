@@ -1,10 +1,8 @@
-package CHAPTER_7;
+package MyReusableCodes;
 
-public class ArrayAss {
-    /*Create an array and initialize it with values.
-    Sum all the values in the array and print them out.*/
+public class SumArrays {
     public static void main(String[] args) {
-        int [] numbers = {3, 2};
+        int [] numbers = {3, 5, 8, 9, 12, 45, 89, 65, 35, 28, 89, 90, 76};
 
         int result = sumArray(numbers);
         System.out.println(result);
@@ -20,4 +18,3 @@ public class ArrayAss {
         return total;
     }
 }
-

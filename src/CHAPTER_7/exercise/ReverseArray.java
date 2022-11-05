@@ -10,7 +10,7 @@ public class ReverseArray {
         System.out.println(Arrays.toString(arrays));
 
         System.out.println("arrays reversed");
-        int[] revArrays = reverse(arrays);
+        int[] revArrays = reverseNewCreate(arrays);
         System.out.println(Arrays.toString(revArrays));
 
         System.out.println("arrays shuffled");
@@ -21,7 +21,7 @@ public class ReverseArray {
         int[] sortArrays = sorted(shuffledArrays);
         System.out.println(Arrays.toString(sortArrays));
     }
-    public static int[] reverse(int[] list) {
+    public static int[] reverseNewCreate(int[] list) {
         int[] result = new int[list.length];
 
         for (int i = 0, j = result.length - 1; i < list.length; i++, j--) {

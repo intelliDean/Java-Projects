@@ -41,7 +41,7 @@ public class ReversedArray {
     public static void main(String[] args) {
         SecureRandom rand = new SecureRandom();
 
-//        int[] userInput = new int[1 + (rand.nextInt(7))];
+        int[] userInput = new int[1 + (rand.nextInt(7))];
 //        for (int i = 0; i <= userInput.length - 1; i++) {
 //            userInput[i] =10 * (1 + rand.nextInt(5));
 //        }

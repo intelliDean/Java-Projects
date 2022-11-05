@@ -12,7 +12,7 @@ public class BigDecimalAndNumberFormat {
         //BigDecimal principal = BigDecimal.valueOf(1000.0);
         //BigDecimal rate = BigDecimal.valueOf(0.05); // interest rate
 
-        System.out.println("Enter deposit(above 100), interest and year respectively");
+        System. out.println("Enter deposit(above 100), interest and year respectively");
         BigDecimal deposit = input.nextBigDecimal();
 
         BigDecimal interest = input.nextBigDecimal();
