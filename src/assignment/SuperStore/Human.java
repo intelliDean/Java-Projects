@@ -1,4 +1,4 @@
-package chapter8;
+package assignment.SuperStore;
 
 import MyReusableCodes.CapitaliseForLetter;
 
@@ -10,6 +10,9 @@ public class Human {
 
 
 
+    public Human() {
+        this(null);
+    }
     public Human(String firstName) {
         this(firstName, 0);
     }

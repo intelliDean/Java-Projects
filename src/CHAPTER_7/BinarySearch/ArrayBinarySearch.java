@@ -14,6 +14,7 @@ public class ArrayBinarySearch {
         int search = binarySearch(sorted, 532);
         System.out.println(search);
     }
+
     public static int binarySearch(int[] arrays, int target) {
         // BINARY SEARCH ONLY WORK WITH A SORTED ARRAY
         if (arrays.length == 0) {
@@ -32,5 +33,45 @@ public class ArrayBinarySearch {
             }
         }
         return -1;          //if the target is not found in the arrays then it will return index -1, which means it is not found
+    }
+
+    static int binarySearch(int[] arrays, int target, int start, int end) {
+        //the beginning of the target search in the infinite array
+        while (target > arrays[end]) {
+            int temp = end + 1;
+            end = end + (end - start + 1) * 2;
+            start = temp;
+        } //the beginning of the binary search
+        while (start <= end) {
+            int mid = start + (end - start) / 2;
+            if (target < arrays[mid]) {
+                end = mid - 1;
+            } else if (target > arrays[mid]) {
+                start = mid + 1;
+            } else {
+                return mid;
+            }
+        }
+        return -1;
+    }
+    static int binarySearch(int[] arrays, int target, int end) {
+        int start = 0;
+        //the beginning of the target search in the infinite array
+        while (target > arrays[end]) {
+            int temp = end + 1;
+            end = end + (end - start + 1) * 2;
+            start = temp;
+        } //the beginning of the binary search
+        while (start <= end) {
+            int mid = start + (end - start) / 2;
+            if (target < arrays[mid]) {
+                end = mid - 1;
+            } else if (target > arrays[mid]) {
+                start = mid + 1;
+            } else {
+                return mid;
+            }
+        }
+        return -1;
     }
 }

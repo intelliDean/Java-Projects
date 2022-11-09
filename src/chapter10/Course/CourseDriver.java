@@ -1,9 +1,12 @@
 package chapter10.Course;
 
+import java.util.Scanner;
+
 public class CourseDriver {
     public static void main(String[] args) {
-        Course course1 = new Course("Data Structures");
-        Course course2 = new Course("Database Systems");
+        Scanner input = new Scanner(System.in);
+        Course course1 = new Course("Dean","Data Structures");
+        Course course2 = new Course("Michael","Database Systems");
 
         course1.addStudent("Peter Jones");
         course1.addStudent("Kim Smith");
@@ -24,6 +27,13 @@ public class CourseDriver {
         studentArrays = course2.getStudents();
         for (int i = 0; i < course2.getNumberOfStudents(); i++) {
             System.out.println(i+1+ ": "+studentArrays[i]);
+        }
+
+        for (int i = 0; i < 1; i++) {
+            for (int j = 0; j < 3; j++) {
+                System.out.println("enter score"+(j+1));
+                course1.addScore(input.nextInt());
+            }
         }
     }
 }
