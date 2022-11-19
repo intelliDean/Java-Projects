@@ -12,13 +12,20 @@ public class CircleWithStatic {
         myNumber = ++numberOfObjects; // numberOfObjects increases by 1 every time the constructor is called
     }
          /** Construct a circle with a specified radius */
-    public CircleWithStatic(double newRadius) {
-         radius = newRadius > 0 ? newRadius : 0;
+    public CircleWithStatic(double newRadius) throws IllegalArgumentException {
+        validateRadius(newRadius);
+         radius = newRadius;
         myNumber = ++numberOfObjects;    //numberOfObjects increases by 1 every time the constructor is called
+
+    }
+    private void validateRadius(double radius) throws IllegalArgumentException{
+        boolean isInvalid = radius < 0;
+        if (isInvalid) throw new IllegalArgumentException("Invalid radius");
     }
 
     public void setRadius(double radius) {
-        this.radius = (radius > 0 ? radius : 0);
+        validateRadius(radius);
+        this.radius = radius;
     }
     public double getRadius() {
         return radius;

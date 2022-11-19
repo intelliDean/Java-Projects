@@ -14,9 +14,9 @@ has a positional value of 1, the next digit to the left a positional value of 2,
 on. The decimal equivalent of binary 1101 is 1 * 1 + 0 * 2 + 1 * 4 + 1 * 8, or 1 + 0 + 4 + 8 or, 13.]*/
 
     public static void binary(long binary) {
-        long temp = binary;
         long rem;
         int sum = 0;
+        long temp = binary;
         int i = 0;
         while (binary > 0) {
             rem = binary % 10;
@@ -24,7 +24,7 @@ on. The decimal equivalent of binary 1101 is 1 * 1 + 0 * 2 + 1 * 4 + 1 * 8, or 1
             binary /= 10;
             i++;
         }
-        System.out.printf("The decimal equivalent of %d is %,d%n", temp, sum);
+        System.out.printf("The decimal equivalent of a binary number of %d is %,d%n", temp, sum);
     }
 
     public static void main(String[] args) {

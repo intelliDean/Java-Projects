@@ -1,15 +1,17 @@
 package CHAPTER_4.exercise;
 
+import java.math.BigDecimal;
+
 import static CHAPTER_4.exercise.TwoLargeNumbers.input;
 
 public class Factorial {
     /*Write an application that reads a non-negative integer and computes and prints its factorial.*/
-    public static int fact(int number) {
-        int fact = 1;
+    public static BigDecimal fact(int number) {
+        BigDecimal fact = BigDecimal.ONE;
         if (number >= 0) {
             int i = 1;
             while (i <= number) {
-                fact *= i;
+                fact = (fact.multiply(BigDecimal.valueOf(i)));
                 i++;
             }
         }

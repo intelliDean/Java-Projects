@@ -1,9 +1,11 @@
 package assignment.SuperStore;
 
+import java.math.BigDecimal;
+
 public class Product {
     private Category category;
     private String id;
     private String name;
-    private int price;
+    private BigDecimal price;
     private String description;
 }

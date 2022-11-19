@@ -92,7 +92,7 @@ public class Oko {
                         if (gameStatus == Status.WON) {
 
                             System.out.printf("%nCongratulations %s. You won!", name);
-                            System.out.printf("%nYou won %.2f%n", win);
+                            System.out.printf("%nYou won ₦%.2f%n", win);
                         } else {
                             System.out.printf("%nSorry %s. %nYou lost!%n", name);
                             System.out.println("\nDeposit to play again");

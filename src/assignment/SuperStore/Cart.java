@@ -1,7 +1,7 @@
 package assignment.SuperStore;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class Cart {
-    private ArrayList<Items> items;
+    private List<Items> items;
 }

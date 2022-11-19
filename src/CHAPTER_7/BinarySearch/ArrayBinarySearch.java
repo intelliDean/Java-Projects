@@ -1,17 +1,10 @@
 package CHAPTER_7.BinarySearch;
 
-import MyReusableCodes.SortArrays;
-
-import java.util.Arrays;
-
 public class ArrayBinarySearch {
     public static void main(String[] args) {
-        int[] arrays = {23, 5, 42, 53, 23, 12, 87, 90};
+        int[] arrays = {5, 12, 23, 23, 42, 53, 87, 90};
 
-        int[] sorted = SortArrays.sortedAscending(arrays);
-        System.out.println(Arrays.toString(sorted));
-
-        int search = binarySearch(sorted, 532);
+        int search = binarySearch(arrays, 53);
         System.out.println(search);
     }
 

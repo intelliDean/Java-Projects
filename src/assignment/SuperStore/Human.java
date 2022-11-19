@@ -11,19 +11,26 @@ public class Human {
 
 
     public Human() {
-        this(null);
     }
     public Human(String firstName) {
-        this(firstName, 0);
+        this.firstName = firstName;
     }
     public Human(String firstName, int age) {
-        this(firstName, age, null);
+        validateAge(age);
+        this.firstName = firstName;
+        this.age = age;;
     }
     public Human(String firstName, String phoneNumber) {
-        this(firstName, 0, phoneNumber);
+        validatePhoneNumber(phoneNumber);
+        this.firstName = firstName;
+        this.phoneNumber = phoneNumber;
     }
     public Human(String firstName, int age, String phoneNumber) {
-        this(firstName, null, age, phoneNumber);
+        validateAge(age);
+        validatePhoneNumber(phoneNumber);
+        this.firstName = firstName;
+        this.age = age;
+        this.phoneNumber = phoneNumber;
     }
     public Human(String firstName, String lastName, int age, String phoneNumber) {
         validateAge(age);

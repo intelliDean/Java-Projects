@@ -15,6 +15,7 @@ public class CircleWithStaticDriver {
          // Create c1
          CircleWithStatic firstCircle = new CircleWithStatic();
 
+
          // Display c1 BEFORE c2 is created
          System.out.println("\nAfter creating c1");
          System.out.printf("firstCircle: radius (%.1f) and number of Circle objects (%d)",
