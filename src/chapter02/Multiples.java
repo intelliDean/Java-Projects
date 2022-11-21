@@ -15,7 +15,7 @@ public class Multiples {
         int number2 = input.nextInt();
 
         int trip1 = number1 * 3;
-        System.out.printf("%nThe tripple of %d is %d", number1, trip1);
+        System.out.printf("%nThe triple of %d is %d", number1, trip1);
         int doub2 = number2 * 2;
         System.out.printf("%nThe double of %d is %d", number2, doub2);
 

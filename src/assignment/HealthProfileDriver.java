@@ -23,7 +23,13 @@ the BMI values chart from Exercise 2.33.*/
         myProfile.setFirstName(fname);
 
         System.out.println(myProfile.getFirstName());
-        System.out.printf("%n%s, %s %s.%n%s%n%n%s: %s%n%s: %s%n%s: %s%n%s: %s%n%s: %.2f%n%s: %.2f%n%s: %d%n%s: %.2f%n%s: %d%n%s: %.2f%n", "Welcome", myProfile.getFirstName(), myProfile.getLastName(), "These are your information ", "First Name", myProfile.getFirstName(), "Last Name", myProfile.getLastName(), "Gender", myProfile.getGender(), "Birthday", myProfile.displayDOB(), "Height", myProfile.getHeight(), "Weight", myProfile.getWeight(), "Age", myProfile.calculateAge(), "BMI", myProfile.bodyMassIndex(), "Max Heart Rate", myProfile.maximunHeartRate(), "Target HR", myProfile.targetHeartRate());
+        System.out.printf("%n%s, %s %s.%n%s%n%n%s: %s%n%s: %s%n%s: %s%n%s: %s%n%s: " +
+                "%.2f%n%s: %.2f%n%s: %d%n%s: %.2f%n%s: %d%n%s: %.2f%n", "Welcome",
+                myProfile.getFirstName(), myProfile.getLastName(), "These are your information ",
+                "First Name", myProfile.getFirstName(), "Last Name", myProfile.getLastName(), "Gender",
+                myProfile.getGender(), "Birthday", myProfile.displayDOB(), "Height", myProfile.getHeight(),
+                "Weight", myProfile.getWeight(), "Age", myProfile.calculateAge(), "BMI", myProfile.bodyMassIndex(),
+                "Max Heart Rate", myProfile.maximunHeartRate(), "Target HR", myProfile.targetHeartRate());
 
 
 

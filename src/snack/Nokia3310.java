@@ -24,7 +24,7 @@ public class Nokia3310 {
                 "8 - Games\n" +
                 "9 - Calculator\n" +
                 "10 - Reminders\n" +
-                "11 - Clock ⚜️\n" +
+                "11 - snack.Clock ⚜️\n" +
                 "12 - Profiles\n" +
                 "13 - SIM services" +
                 closeOrGoBack("close");
@@ -194,7 +194,7 @@ public class Nokia3310 {
     public String clockMenu(){
         return generateHeader("CLOCK") +
                 "1 - Alarm clock\n" +
-                "2 - Clock settings\n" +
+                "2 - snack.Clock settings\n" +
                 "3 - Date setting\n" +
                 "4 - Stopwatch\n" +
                 "5 - Countdown timer\n" +

@@ -58,11 +58,11 @@ Exercise 2.33). */
     public void setYear(int year) {
         this.year = year;
     }
-    public int getYear() {
+    public int obtainYear() {
         return year;
     }
     public String displayDOB() {
-        return getDay()+"/"+getMonth()+"/"+getYear();
+        return getDay()+"/"+getMonth()+"/"+ obtainYear();
     }
     public void setGender (String gender) {
         this.gender = gender;
@@ -83,7 +83,7 @@ Exercise 2.33). */
         return weight;
     }
     public int calculateAge() {
-        return myObj.getYear() - getYear();// this first getYear is the current year in the java package and the second year is the getYear method in my class
+        return myObj.getYear() - obtainYear();// this first getYear is the current year in the java package and the second year is the getYear method in my class
     }
     public int maximunHeartRate() {
         return 220 - calculateAge();

@@ -1,7 +1,5 @@
 package assignment;
 
-import java.util.Scanner;
-
 public class OkoClass {
     private String name;
     private int age;
@@ -14,15 +12,16 @@ public class OkoClass {
         return name;
     }
     public void setAge(int age) {
-        Scanner input = new Scanner(System.in);
-            if (age > 18) {
-            } else {
-                System.out.println("You are too young to play");
-            }this.age = age;
+        if (age > 18) {
+            this.age = age;
+        } else {
+            System.out.println("You are too young to play");
+        }
     }
 
     public void deposit(double depositAmount){
-        if (depositAmount >= 500){ deposit = depositAmount;
+        if (depositAmount >= 500){
+            deposit = depositAmount;
         } else {
             System.out.println("Your deposit is too low. Minimum deposit is #500");
         }
