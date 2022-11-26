@@ -37,6 +37,7 @@ public class Circle extends Geometry {
     /**
      * Return area
      */
+    @Override
     public double getArea() {
         return radius * radius * Math.PI;
     }
@@ -51,6 +52,7 @@ public class Circle extends Geometry {
     /**
      * Return perimeter
      */
+    @Override
     public double getPerimeter() {
         return 2 * radius * Math.PI;
     }

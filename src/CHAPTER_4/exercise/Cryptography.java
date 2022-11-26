@@ -15,7 +15,7 @@ encryption scheme) to form the original number*/
         int i = 0;
         String d = "";
         char comp = sum.trim().charAt(0);
-        if (sum.length() == 4 || comp >= '1' && comp <= '0') {
+        if (sum.length() == 4) {
             while (i < 4) {
                 int num = Integer.parseInt(String.valueOf(sum.charAt(i)));
                 a = 7 + num;
@@ -33,7 +33,7 @@ encryption scheme) to form the original number*/
         int i = 0;
         String d = "";
         char temp = sum.trim().charAt(0);
-        if (sum.length() == 4 || temp >= '1' && temp <= '0') {
+        if (sum.length() == 4) {
             while (i < 4) {
                 int num = Integer.parseInt(String.valueOf(sum.charAt(i)));
                 if (sum.charAt(i) == '1') {
@@ -48,6 +48,12 @@ encryption scheme) to form the original number*/
             }
         } else {
             System.out.println("You no dey hear word? I said 4 digits only!");
+        }
+    }
+    public static void crypto3(int number) {
+        String num = String.valueOf(number);
+        if (num.length() == 4) {
+            char firstNumber = (char) (num.charAt(0) + 7);
         }
     }
 

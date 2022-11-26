@@ -50,6 +50,7 @@ public class Rectangle extends Geometry{
     /**
      * Return area
      */
+    @Override
     public double getArea() {
         return width * height;
     }
@@ -57,6 +58,7 @@ public class Rectangle extends Geometry{
     /**
      * Return perimeter
      */
+    @Override
     public double getPerimeter() {
         return 2 * (width + height);
     }

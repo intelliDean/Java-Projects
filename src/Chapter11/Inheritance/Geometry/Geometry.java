@@ -1,10 +1,11 @@
 package Chapter11.Inheritance.Geometry;
 
-public class Geometry {
+public abstract class Geometry {
     private String color = "white";
     private boolean filled;
     private java.util.Date dateCreated;
     private static int object;
+
 
     /**
      * Construct a default geometric object
@@ -22,8 +23,9 @@ public class Geometry {
         this.color = color;
         this.filled = filled;
     }
+
     public static int objectNumber() {
-        return  ++object;
+        return ++object;
     }
 
     /**
@@ -66,7 +68,16 @@ public class Geometry {
      * Return a string representation of this object
      */
     public String toString() {
-        return "created on " + dateCreated + "\ncolor: " + color +
-                " and filled: " + filled;
+        return String.format("%s%s%n%s%s%n%s%b", "created on ", dateCreated, "color: ", color, "filled: ", filled);
     }
+
+    /**
+     * Abstract method getArea
+     */
+    public abstract double getArea();
+
+    /**
+     * Abstract method getPerimeter
+     */
+    public abstract double getPerimeter();
 }
