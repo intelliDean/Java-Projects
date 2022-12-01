@@ -1,66 +1,101 @@
-package CHAPTER_4.exercise; //8901
-                           // 0189
-                          //  1098
+package CHAPTER_4.exercise;
+
 import java.util.Scanner;
 
-public class Cryptography {
-    /*Your application should read a four-digit integer entered by the user and encrypt it as follows:
-    Replace each digit with the result of adding 7
+/*All the data is transmitted as four-digit integers. Your application should read a four-digit
+integer entered by the user and encrypt it as follows: Replace each digit with the result of adding 7
 to the digit and getting the remainder after dividing the new value by 10. Then swap the first digit
 with the third, and swap the second digit with the fourth. Then print the encrypted integer. Write
 a separate application that inputs an encrypted four-digit integer and decrypts it (by reversing the
-encryption scheme) to form the original number*/
-    public static void crypto(String sum) {
-        int a, b;
-        int i = 0;
-        String d = "";
-        char comp = sum.trim().charAt(0);
-        if (sum.length() == 4) {
-            while (i < 4) {
-                int num = Integer.parseInt(String.valueOf(sum.charAt(i)));
-                a = 7 + num;
-                b = a % 10;
-                i++;
-                System.out.print(b);
-            }
-        } else {
-            System.out.println("You no dey hear word? I said 4 digits only!");
-        }
-    }
+encryption scheme) to form the original number. [Optional reading project: Research “public key
+cryptography” in general and the PGP (Pretty Good Privacy) specific public key scheme. You may
+also want to investigate the RSA scheme, which is widely used in industrial-strength applications.*/
+public class Cryptography {
 
-    public static void crypto2(String sum) {
-        int a, b;
-        int i = 0;
-        String d = "";
-        char temp = sum.trim().charAt(0);
-        if (sum.length() == 4) {
-            while (i < 4) {
-                int num = Integer.parseInt(String.valueOf(sum.charAt(i)));
-                if (sum.charAt(i) == '1') {
-                    num = 11;
-                } else if (sum.charAt(i) == '2') {
-                    num = 12;
-                }
-                a = (num + 3);
-                b = a % 10;
-                i++;
-                System.out.print(b);
-            }
+    public static String decryption(int number) {
+        /*
+         swap the second digit with the fourth digit
+         swap the first digit with the third
+         */
+        if (String.valueOf(number).length() == 4) {
+            int firstDigit = number / 1000;
+            int temp = number % 1000;
+            int secondDigit = temp / 100;
+            temp = number % 100;
+            int thirdDigit = temp / 10;
+            int fourthDigit = number % 10;
+
+            firstDigit = validate(firstDigit);
+            secondDigit = validate(secondDigit);
+            thirdDigit = validate(thirdDigit);
+            fourthDigit = validate(fourthDigit);
+
+            temp = firstDigit;
+            firstDigit = thirdDigit;
+            thirdDigit = temp;
+            temp = secondDigit;
+            secondDigit = fourthDigit;
+            fourthDigit = temp;
+
+            return String.format("%d%d%d%d",firstDigit,secondDigit,thirdDigit,fourthDigit);
         } else {
-            System.out.println("You no dey hear word? I said 4 digits only!");
+            return String.format("%s%n","Enter only 4 digits");
         }
     }
-    public static void crypto3(int number) {
+    private static int validate(int number) {
+        if (number == 7 || number == 8 || number == 9) {
+            number -= 7;
+        } else {
+            number += 3;
+        }
+        return number;
+    }
+    public static String encryption(int number) {
+        /*
+        add 7 to each digits
+        get the remainder of dividing each new value by 10
+        swap the first digit with the third
+        swap the second with the fourth digits
+        * */
         String num = String.valueOf(number);
         if (num.length() == 4) {
-            char firstNumber = (char) (num.charAt(0) + 7);
+        int firstDigit = number / 1000 + 7;
+        int temp = number % 1000;
+        int secondDigit = temp / 100 + 7;
+        temp = number % 100;
+        int thirdDigit = temp / 10 + 7;
+        int fourthDigit = number % 10 + 7;
+
+        firstDigit %= 10;
+        secondDigit %= 10;
+        thirdDigit %= 10;
+        fourthDigit %= 10;
+
+        temp = firstDigit;
+        firstDigit = thirdDigit;
+        thirdDigit = temp;
+
+        temp = secondDigit;
+        secondDigit = fourthDigit;
+        fourthDigit = temp;
+
+        return String.format("%d%d%d%d",firstDigit,secondDigit,thirdDigit,fourthDigit);
+        } else {
+            return String.format("%s%n","Invalid Input! Enter only 4 digits");
         }
+
     }
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        System.out.println("enter four digit number only");
-        String sum = input.nextLine();
-        crypto2(sum);
+        System.out.println("Enter 4 digits only");
+        int number =  input.nextInt();
+
+        String result = encryption(number);
+        System.out.println("encryption "+result);
+
+        int arg = Integer.parseInt(result);
+        System.out.println("decryption "+decryption(arg));
+
     }
 }

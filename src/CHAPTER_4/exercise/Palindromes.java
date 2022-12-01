@@ -19,18 +19,20 @@ a new value.*/
         System.out.println(sum);
         return temp == sum;
     }
-    public static void stringPalindromes(String original) {
-        StringBuilder reverse = new StringBuilder(); // Object of String class
+    public static boolean isPalindromes(String original) {
+        StringBuilder builder = new StringBuilder(); // Object of String class
          int length = original.length(); // converting the length of a string into integer
-         for ( int i = length - 1; i >= 0; i-- )
-             reverse.append(original.charAt(i));
-         if (original.equals(reverse.toString()))
-             System.out.println("\nEntered string/number is a palindrome.");
-         else
-             System.out.println("\nEntered string/number isn't a palindrome.");
-
-
-
+         for ( int i = length - 1; i >= 0; i-- ) {
+             builder.append(original.charAt(i));
+         }
+         return original.equals(builder.toString());
+    }
+    public static char[] reversedWord(String word) {
+        char[] reversedChar = new char[word.length()];
+        for (int i = 0, j = word.length() -1; i < word.length(); i++, j--) {
+            reversedChar[i] = word.charAt(j);
+        }
+        return reversedChar;
     }
     public static void main(String[] args){
 //        Scanner input = new Scanner(System.in);
@@ -42,11 +44,13 @@ a new value.*/
 //       boolean res = intPalindromes(ori);
 //        System.out.println(res);
 //        stringPalindromes(ori);
-        String cha = "madan";
+        String cha = "madam";
         boolean wink = ch(cha);
         System.out.println(wink);
 
 
+        System.out.println(reversedWord("madam"));
+        System.out.println(charPalindrome("mom"));
     }
     public static boolean ch(String name){
         char[] n = name.toCharArray();
@@ -57,6 +61,16 @@ a new value.*/
         }
         return Arrays.equals(k, n);
 
+    }
+    public static boolean charPalindrome(String word) {
+        char[] newWord = word.toCharArray();
+        char[] copy = newWord.clone();
+        for (int i = 0, j = newWord.length - 1; i < newWord.length / 2; i++, j--) {
+            char temp = newWord[i];
+            newWord[i] = newWord[j];
+            newWord[j] = temp;
+        }
+        return Arrays.equals(newWord, copy);
     }
 
 }

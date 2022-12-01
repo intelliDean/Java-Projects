@@ -12,10 +12,10 @@ it’s divided by 3 with a remainder of 0.]*/
         System.out.println("Enter an integer: ");
         int number = input.nextInt();
 
-        if (number % 3 == 0){
-            System.out.printf("%n%d is divisible by 3", number);
-        } else {
-            System.out.printf("%n%d is not divisible by 3", number);
-        }
+        System.out.println(divisibleBy3(number));
+
+    }
+    public static boolean divisibleBy3(int number) {
+        return number % 3 == 0;
     }
 }

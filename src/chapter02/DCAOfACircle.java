@@ -24,10 +24,17 @@ specifier %f in a System.out.printf statement. You’ll learn more about floatin
         System.out.println("Input the radius");
         double radius = input.nextDouble();
 
-        System.out.printf("%nThe diameter is %.2f%n ", radius * 2);
-
-        System.out.printf("%nThe circumference is %.2f%n ", 2 * Math.PI * radius);
-
-        System.out.printf("%nThe area is %.2f%n ", Math.PI * radius * radius);
+        System.out.printf("%nThe diameter of the circle is %.2f%n ", calculateDiameter(radius));
+        System.out.printf("%nThe circumference of the circle is %.2f%n ",calculateCircumference(radius));
+        System.out.printf("%nThe area of the circle is %.2f%n ",calculateArea(radius));
+    }
+    public static double calculateDiameter(double radius) {
+        return radius * 2;
+    }
+    public static double calculateCircumference(double radius) {
+        return 2 * Math.PI * radius;
+    }
+    public static double calculateArea(double radius) {
+        return 2 * Math.PI * radius * radius;
     }
 }
