@@ -18,7 +18,7 @@ public class Address {
         this(houseNumber, streetName, city, null, null);
     }
 
-    public Address() {}
+    public Address() { }
 
     public Address(String houseNumber, String streetName) {
         this(houseNumber, streetName, null);

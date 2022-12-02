@@ -113,7 +113,7 @@ public class PhoneDirectoryDriver {
                 new Address(houseNumber, streetName, city, state, country),
                 phoneNumber, email);
         directory.addContact(newContact);
-        directory.addContact(newContact);
+
 
         System.out.println("\n ✅ Added successfully!");
     }
