@@ -73,6 +73,11 @@ public class DiaryTest {
         assertEquals(0,  diary.numberOfEntries());
     }
     @Test
+    void writingToLockedDiaryThrowsException() {
+        assertTrue(diary.isLocked());
+        assertThrows(IllegalArgumentException.class, ()->  diary.write("I am a software engineer","Java made me an engineer"));
+    }
+    @Test
     void findEntriesById() {
         diary.unlockWith("@Xoxo1239!");
         assertFalse(diary.isLocked());
@@ -147,4 +152,16 @@ public class DiaryTest {
         diary.deleteEntryByBody("i am ready to give my total");
         assertEquals(0, diary.numberOfEntries());
     }
+    @Test
+    void testException() {
+        assertTrue(diary.isLocked());
+        try{
+            diary.write("total", "i am ready to give my total");
+        } catch(Exception ex) {
+            System.err.println(ex.getMessage());
+        }
+        assertEquals(0, diary.numberOfEntries());
+
+    }
+
 }

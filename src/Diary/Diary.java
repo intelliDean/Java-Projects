@@ -38,16 +38,15 @@ public class Diary {
     public void lock() {            //update method to change the state of the diary
         isLocked = true;
     }
-    public void unlockWith(String password) {           //update method
+    public void  unlockWith(String password) {           //update method
         boolean passwordMatch = password.equals(this.password);
         if (passwordMatch) {
             this.isLocked = false;
         }
     }
     public void write(String title, String bodyOfEntry) {
-        if (!isLocked) {
-            writeIntoDiary(title, bodyOfEntry);
-        }
+        if (isLocked) throw new IllegalArgumentException("You dey mad abi? Diary is locked joor");
+        writeIntoDiary(title, bodyOfEntry);
     }
     private void writeIntoDiary(String title, String bodyOfEntry) {
         int id = numberOfEntries() + 1;
@@ -70,6 +69,7 @@ public class Diary {
 //        for (Entry entry : entries) {
 //            if (entry.getId() == id) {
 //                entries.remove(entry);
+//                break;
 //            }
 //        }
     }

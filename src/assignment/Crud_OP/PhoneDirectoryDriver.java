@@ -4,13 +4,12 @@ import java.util.Scanner;
 
 public class PhoneDirectoryDriver {
     private static final Directory directory = new Directory();
+    private static Scanner in = new Scanner(System.in);
 
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
 
         while (true) {
-
-            System.out.println("""
+            print("""
                     Welcome to Phone book
 
                     1 - View all contacts
@@ -18,130 +17,141 @@ public class PhoneDirectoryDriver {
 
                     0 - Quit
                     """);
-            String res = input.nextLine();
+            String res = in.nextLine();
 
             if (res.trim().equals("0")) {
-                break;
+                System.exit(0);
             }
 
             switch (res) {
                 case "1" -> {
                     while (true) {
-                        displayPhoneBook();
-                        try {
-                            System.out.println("Enter contact ID to view or -1 to go back");
-                            int contactId = Integer.parseInt(input.next());
-                            input.nextLine();
-
-                            if (contactId == -1) {
-                                break;
-                            } else {
-                                int editOption = -2;
-                                while (editOption != -1 && editOption != 99) {
-
-                                    Contact contact = directory.getContactById(contactId);
-                                    displayContact(contact);
-
-                                    System.out.println("""
-                                            <-- Edit -->
-                                            1 -> Address
-                                            2 -> Telephone
-                                            3 -> Email
-
-                                            99 to delete contact
-                                            -1 to Quit
-                                            """);
-
-                                    editOption = Integer.parseInt(input.next());
-
-                                    switch (editOption) {
-//                                        case 1 -> {
-//                                            System.out.print("Enter new name: ");
-//                                            String newName = input.nextLine();
-//
-//                                            directory.editContactName(contactId, newName);
-//                                            System.out.println("\n ✅ Updated successfully\n");
-//                                        }
-                                        case 1 -> {
-                                            System.out.print("Enter Street name: ");
-                                            String streetName = input.nextLine();
-
-                                            System.out.print("Enter City name: ");
-                                            String city = input.nextLine();
-
-                                            System.out.print("Enter Country: ");
-                                            String country = input.nextLine();
-
-                                            Address address = new Address(streetName, city, country);
-                                            directory.editContactAddress(contactId, address);
-                                            System.out.println("\n ✅ Updated successfully\n");
-                                        }
-                                        case 2 -> {
-                                            System.out.print("Enter new phone number: ");
-                                            String phoneNumber = input.nextLine();
-
-                                            directory.editContactTelephone(contactId, phoneNumber);
-                                            System.out.println("\n ✅ Updated successfully\n");
-                                        }
-                                        case 3 -> {
-                                            System.out.print("Enter the new Email: ");
-                                            String email = input.nextLine();
-
-                                            directory.editContactEmail(contactId, email);
-                                            System.out.println("\n ✅ Updated successfully\n");
-                                        }
-                                        case 99 -> {
-                                            directory.deleteContact(contactId);
-                                            System.out.println("\n ✅ Deleted successfully\n\n");
-                                        }
-                                    }
-                                }
-                            }
-                        } catch (ContactNotFoundException e) {
-                            System.out.println("\n ❌ " + e.getMessage() + " ❌ \n");
-                        }
+                        if (contact()) break;
                     }
                 }
                 case "2" -> {
-
-                    System.out.println("Enter First Name");
-                    String firstName = input.nextLine();
-
-                    System.out.println("Enter Last Name");
-                    String lastName = input.nextLine();
-
-                    System.out.println("Enter House Number");
-                    String houseNumber = input.nextLine();
-
-                    System.out.println("Enter Street name");
-                    String streetName = input.nextLine();
-
-                    System.out.println("Enter City");
-                    String city = input.nextLine();
-
-                    System.out.println("Enter State");
-                    String state = input.nextLine();
-
-                    System.out.println("Enter Country");
-                    String country = input.nextLine();
-
-                    System.out.println("Enter Phone number");
-                    String phoneNumber = input.nextLine();
-
-                    System.out.println("Enter Email address");
-                    String email = input.nextLine();
-
-                    Contact newContact = new Contact(firstName, lastName,
-                            new Address(houseNumber, streetName, city, state, country),
-                            phoneNumber, email);
-                    directory.addContact(newContact);
-                    directory.addContact(newContact);
-
-                    System.out.println("\n ✅ Added successfully!");
+                    saveInfo();
                 }
             }
         }
 
+    }
+
+    private static boolean contact() {
+        displayPhoneBook();
+        try {
+            System.out.println("Enter contact ID to view or -1 to go back");
+            int contactId = Integer.parseInt(in.next());
+            in.nextLine();
+
+            if (contactId == -1) {
+                return true;
+            } else {
+                int editOption = -2;
+                while (editOption != -1 && editOption != 99) {
+
+                    editOption = displayUpdate(contactId);
+                }
+            }
+        } catch (ContactNotFoundException e) {
+            System.out.println("\n ❌ " + e.getMessage() + " ❌ \n");
+        }
+        return false;
+    }
+
+    private static int displayUpdate(int contactId) {
+        int editOption;
+        Contact contact = directory.getContactById(contactId);
+        displayContact(contact);
+
+        print("""
+                <-- Edit -->
+                1 -> Address
+                2 -> Telephone
+                3 -> Email
+
+                99 to delete contact
+                -1 to Quit
+                """);
+
+        editOption = Integer.parseInt(in.next());
+
+        updateContact(contactId, editOption);
+        return editOption;
+    }
+
+    private static void updateContact(int contactId, int editOption) {
+        switch (editOption) {
+            case 1 -> {
+                saveAddress(contactId);
+            }
+            case 2 -> {
+                savePhoneNumber(contactId);
+            }
+            case 3 -> {
+                saveEmail(contactId);
+            }
+            case 99 -> {
+                directory.deleteContact(contactId);
+                System.out.println("\n ✅ Deleted successfully\n\n");
+            }
+        }
+    }
+
+    private static void saveInfo() {
+        String firstName = input("Enter First Name");
+        String lastName = input("Enter Last Name");
+        String houseNumber = input("Enter House Number");
+        String streetName = input("Enter Street name");
+        String city = input("Enter City");
+        String state = input("Enter State");
+        String country = input("Enter Country");
+        String phoneNumber = input("Enter Phone number");
+        String email = input("Enter Email address");
+
+        Contact newContact = new Contact(firstName, lastName,
+                new Address(houseNumber, streetName, city, state, country),
+                phoneNumber, email);
+        directory.addContact(newContact);
+        directory.addContact(newContact);
+
+        System.out.println("\n ✅ Added successfully!");
+    }
+
+    private static void saveEmail(int contactId) {
+        String email = input("Enter the new Email: ");
+
+        directory.editContactEmail(contactId, email);
+        System.out.println("\n ✅ Updated successfully\n");
+    }
+
+    private static void savePhoneNumber(int contactId) {
+        String phoneNumber = input("Enter new phone number: ");
+
+        directory.editContactTelephone(contactId, phoneNumber);
+        System.out.println("\n ✅ Updated successfully\n");
+    }
+
+    private static String input(String prompt) {
+        print(prompt);
+        return in.nextLine();
+        //return JOptionPane.showInputDialog(null, prompt);
+    }
+
+    private static void print(String prompt) {
+        System.out.println(prompt);
+        //JOptionPane.showMessageDialog(null, prompt);
+    }
+
+    private static void saveAddress(int contactId) {
+        String streetName = input("Enter Street name: ");
+        String city = input("Enter City name: ");
+        String country = input("Enter Country: ");
+
+        Address address = new Address(streetName, city, country);
+        directory.editContactAddress(contactId, address);
+
+        System.out.println("\n ✅ Updated successfully\n");
     }
 
     public static void displayPhoneBook() {

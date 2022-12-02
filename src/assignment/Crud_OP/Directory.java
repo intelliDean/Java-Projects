@@ -27,6 +27,9 @@ public class Directory {
     public List<Contact> getAllContacts() {
         return contacts;
     }
+    public int contactSize() {
+        return contacts.size();
+    }
 
     public Contact getContactById(int id) {
         Contact toReturn = null;
@@ -116,6 +119,7 @@ public class Directory {
 
 
     }
+
 
 
 }

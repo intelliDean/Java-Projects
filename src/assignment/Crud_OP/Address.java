@@ -17,6 +17,9 @@ public class Address {
     public Address(String houseNumber, String streetName, String city) {
         this(houseNumber, streetName, city, null, null);
     }
+
+    public Address() {}
+
     public Address(String houseNumber, String streetName) {
         this(houseNumber, streetName, null);
     }
