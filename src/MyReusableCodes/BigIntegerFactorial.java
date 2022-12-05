@@ -4,7 +4,7 @@ import java.math.BigInteger;
 
 public class BigIntegerFactorial {
     public static void main(String[] args) {
-        int target = 50;
+        int target = 100;
         System.out.printf("%d! is %n %,d", target, factorial(target));
     }
 

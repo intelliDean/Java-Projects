@@ -19,33 +19,56 @@ representation of the average. So, if the sum of the values is 7, the average sh
         System.out.println("Enter number 3");
         int num3 = input.nextInt();
 
-        int sum = num1 + num2 + num3;
-        System.out.printf("%nThe sum of %d,%d,%d is %d%n ",num1, num2, num3, sum);
+        int sum = addingNumbers(num1, num2, num3);
+        System.out.printf("%nThe sum of %d,%d,%d is %d%n ", num1, num2, num3, sum);
 
-        double avg = sum / 3;
+        double avg = average(num1, num2, num3);
         System.out.printf("%nThe average is %.2f%n", avg);
 
-        int product = num1 * num2 * num3;
-        System.out.printf("%nThe product of %d,%d,%d is %d%n", num1, num2, num3, product);
+        int product = multiply(num1, num2, num3);
+        System.out.printf("%nThe product of %d, %d, %d is %d%n", num1, num2, num3, product);
 
-            int largest = num1; //Math.max(num1, Math.max(num2,num3));
-            if (num2 > largest) {
-                largest = num2;
-            } else {
-                if (num3 > largest) {
-                    largest = num3;
-                }
-            }
-        System.out.printf("%nThe largest of %d,%d,%d is %d%n",num1, num2, num3,largest);
+            int largest = max(num1, num2, num3); //Math.max(num1, Math.max(num2,num3));
 
-        int lowest = num1; //Math.min(num1, Math.min(num2,num3));
-        if (num2 < lowest){
-            lowest = num2;
-        } else {
-            if (num3 < lowest){
-                lowest = num3;
+        System.out.printf("%nThe largest of %d, %d, %d is %d%n",num1, num2, num3,largest);
+
+        int lowest = min(num1, num2, num3);
+        System.out.printf("%nThe lowest of %d, %d, %d is %d%n",num1, num2, num3,lowest);
+    }
+    public static int addingNumbers(int... numbers) {
+        int total = 0;
+        for(int number : numbers) {
+            total += number;
+        }
+        return total;
+    }
+    public static double average(int... numbers) {
+        int total = addingNumbers(numbers);
+        return (double) total / numbers.length;
+    }
+    public static int multiply(int... numbers) {
+        int total = 1;
+        for(int number : numbers) {
+            total *= number;
+        }
+        return total;
+    }
+    public static int max(int... numbers) {
+        int max = numbers[0];
+        for(int number : numbers) {
+            if (number > max) {
+                max = number;
             }
         }
-        System.out.printf("%nThe lowest of %d,%d,%d is %d%n",num1, num2, num3,lowest);
+        return max;
+    }
+    public static int min(int... numbers) {
+        int min = numbers[0];
+        for(int number : numbers) {
+            if (number < min) {
+                min = number;
+            }
+        }
+        return min;
     }
 }

@@ -27,6 +27,7 @@ public class InputException {
         } while (doAgain);
     }
     public static int addSum(int number1, int number2) throws InputMismatchException {
+
         return number1 + number2;
     }
 }

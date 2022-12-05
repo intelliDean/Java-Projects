@@ -9,7 +9,8 @@ public class Date {
          // constructor: confirm proper value for month and day given the year
 
     public Date(int day, int month) {
-        this(day, month, 0);
+        this.day = day;
+        this.month = month;
     }
     public Date(int day, int month,  int year) {
         validateDay(day, month);

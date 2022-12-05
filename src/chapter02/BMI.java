@@ -9,10 +9,13 @@ public class BMI {
         System.out.println("Input your weight");
         double weight = input.nextDouble();
 
-        System.out.println("Input your height");
+        System.out.println("Input your height in centimeter");
         double height = input.nextDouble();
 
-        double bmi = (weight * 703)/ (height * height);
+        double bmi = calculateBMI(weight, height);
         System.out.printf("%nYour BMI = %.2f%n", bmi);
+    }
+    public static double calculateBMI(double weight, double height) {
+        return (weight * 703) / (height * height);
     }
 }
