@@ -9,7 +9,7 @@ public class Ellipsis {
     Scanner input = new Scanner(System.in);
     // calculate average
     @Contract(pure = true)
-    public static double average(double @NotNull ... numbers) {
+    public static double average(double... numbers) {
          double total = 0.0;
          for (double d : numbers) {  // calculate total using the enhanced for statement
              total += d;
