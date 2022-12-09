@@ -8,4 +8,6 @@ public interface PhonebookService {
     Contact findContact(String ownersPhoneNumber, String phoneNumberToSearchFor);
     void delete();
     void updateContact();
+
+    long numberOfUser();
 }

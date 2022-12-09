@@ -15,6 +15,8 @@ class PhonebookServiceImplTest {
     @Test
     void registerUser() {
         phoneService.register("Dean", "0909");
+        assertThrows(IllegalAccessException.class, ()-> phoneService.register("Dean", "0909"));
+        assertEquals(1, phoneService.numberOfUser());
 
     }
 
