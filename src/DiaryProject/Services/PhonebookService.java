@@ -10,4 +10,6 @@ public interface PhonebookService {
     void updateContact();
 
     long numberOfUser();
+
+    long numberOfContacts();
 }
