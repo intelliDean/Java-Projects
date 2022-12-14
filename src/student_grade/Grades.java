@@ -28,7 +28,7 @@ private List<Scores> scores;
             if (score.getStudents().getId().equals(id)) {
                 return score;
             }
-        }git
+        }
         return null;
     }
 

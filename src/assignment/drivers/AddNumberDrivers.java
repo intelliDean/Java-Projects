@@ -9,7 +9,7 @@ public class AddNumberDrivers {
         Scanner input = new Scanner(System.in);
         int num1, num2;
         System.out.println("""
-                Input numbers or Ctrl d to quit""");
+                Input 2 numbers or Ctrl d to quit""");
         do {
         num1 = input.nextInt();
         num2 = input.nextInt();
