@@ -11,7 +11,7 @@ class PhonebookTest {
 
     @BeforeEach
     void setUp() {
-        contactRepo = new Phonebook();
+        //contactRepo = new Phonebook();
     }
     @Test
     void saveContactIntoContactRepo() {

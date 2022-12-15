@@ -12,7 +12,7 @@ class PhonebookServiceImplTest {
 
     @BeforeEach
     void setUp() {
-        phoneService = new PhonebookServiceImpl();
+       // phoneService = new PhonebookServiceImpl();
     }
     @Test
     void registerUser() {

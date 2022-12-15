@@ -8,4 +8,5 @@ public interface PhonebookRepo {
     void delete(Phonebook phonebook);
     void delete(int id);
     long numberOfPhonebooks();
+    void deleteAll();
 }
