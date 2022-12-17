@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class CreateTextFile {
     public static void main(String[] args) {
         // open clients.txt, output data to the file then close clients.txt
-        try (Formatter save = new Formatter("clients.txt")) {
+        try (Formatter create = new Formatter("clients.txt")) {
             Scanner input = new Scanner(System.in);
             System.out.print("""
                     Enter account number, first name, last name and balance.
@@ -18,8 +18,10 @@ public class CreateTextFile {
 
             while (input.hasNext()) { // loop until end-of-file indicator
                 try {
+
                     // output new record to file; assumes valid input
-                    save.format("%d %s %s %.2f%n", input.nextInt(), input.next(), input.next(), input.nextDouble());
+                    create.format("%d %s %s %.2f%n",
+                            input.nextInt(), input.next(), input.next(), input.nextDouble());
 
                 } catch (NoSuchElementException elementException) {
                     System.err.println("Invalid input. Please try again.");

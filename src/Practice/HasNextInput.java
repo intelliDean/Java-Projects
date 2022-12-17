@@ -11,13 +11,13 @@ public class HasNextInput {
         String address;
         System.out.print("""
                 age and name
+                ctrl d to quit
                 ->\s""");
         while (input.hasNext()) {
             
             try {
                 age = input.nextInt();
                 name = input.next();
-                // TODO: 16-Dec-22  
             } catch (InputMismatchException ex) {
                 System.err.println("Invalid input. enter a number");
                 input.nextLine();
