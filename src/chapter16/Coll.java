@@ -38,6 +38,17 @@ public class Coll {
 //        Double n = 2.9;
 //        int o = (int) (m + n);
 //        System.out.println(o);
+//        Object name = 7;
+//        name = "Dean";
+//        System.out.println(name);
+//        name = new int[]{3, 5, 6, 7};
+//        name = 3.90;
+//        
+//        final int NUM = 59;
+
+
+
+
         Scanner input = new Scanner(System.in);
         List<Integer> numbers = new ArrayList<>();
 

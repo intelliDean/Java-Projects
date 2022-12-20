@@ -52,8 +52,7 @@ public class ListTest {
         }
     }
 
-    private static void removeItems(List<String> list,
-                                    int start, int end) {
+    private static void removeItems(List<String> list, int start, int end) {
         list.subList(start, end).clear(); // remove items
     }
 
