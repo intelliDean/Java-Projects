@@ -8,6 +8,12 @@ public class StreamSum {
 
         int result = IntStream.rangeClosed(1, 10).sum();
 
-        System.out.printf("Sum of 1 through 10 is: %d%n",result);
+        System.out.printf("Lambdas: Sum of 1 through 10 is: %d%n",result);
+
+        int total = 0;
+        for (int i = 1; i <= 10; i++) {
+            total += i;
+        }
+        System.out.printf("Loop: Sum of 1 through 10 is: %d%n",total);
     }
 }
