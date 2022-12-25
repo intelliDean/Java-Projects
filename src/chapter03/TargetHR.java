@@ -16,6 +16,7 @@ that calculates and returns the person’s age (in years), a method that calcula
 maximum heart rate and a method that calculates and returns the person’s target heart rate.
 Write a Java app that prompts for the person’s information, instantiates an object of class HeartRates
 and prints the information from that object—including the person’s first name, last name and
-date of birth—then calculates and prints the person’s age in (years), maximum heart rate and targetheart-rate range.*/
+date of birth—then calculates and prints the person’s age in (years), maximum heart rate and target heart-rate range.*/
+
 
 }

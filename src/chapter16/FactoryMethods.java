@@ -9,6 +9,7 @@ public class FactoryMethods {
         String[] colors = {"red", "orange", "yellow",
                 "green", "blue", "indigo", "violet"};
 
+
         // create a List
         List<String> colorList = List.of(colors);       //factory method element is unmodifiable
 
