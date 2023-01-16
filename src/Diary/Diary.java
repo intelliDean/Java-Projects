@@ -16,10 +16,11 @@ public class Diary {
         if (isValidPassword(password)) {
             this.password = password;
         }
-//        this.password = password;
+
         isLocked = true;
         entries = new ArrayList<>();
     }
+
     public static boolean isValidPassword(String password) {
         // At least          0 - 9      /       a - z  /   A - Z   / Special Characters    /   20 <= >= 8
         String regex = "^(?=.*[0-9])" + "(?=.*[a-z])(?=.*[A-Z])" + "(?=.*[@#$%^&+=])" + "(?=\\S+$).{8,20}$";

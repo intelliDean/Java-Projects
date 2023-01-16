@@ -9,7 +9,7 @@ public class StreamsAndArray {
         Integer[] values = {2, 9, 5, 0, 3, 7, 1, 4, 8, 6};
 
         // display original values
-        System.out.printf("Original values: %s%n", Arrays.asList(values));
+        System.out.printf("Original values: %s%n", Arrays.asList(values)    );
 // sort values in ascending order with streams
         System.out.printf("Sorted values: %s%n",
 

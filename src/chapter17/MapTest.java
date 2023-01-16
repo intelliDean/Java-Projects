@@ -25,6 +25,5 @@ public class MapTest {
         System.out.println("\n");
         System.out.println(IntStream.of(numbers).summaryStatistics());
 
-
     }
 }

@@ -8,7 +8,7 @@ public class RegexMatches {
         Pattern expression = Pattern.compile("J.*\\d[0-35-9]-\\d\\d-\\d\\d");
 
         String string1 = """
-                Jane's Birthday is 05-12-1975
+                Jane's Birthday is 45-12-1975
                 Dave's Birthday is 11-04-1968
                 Joe's Birthday is 12-17-1977
                 John's Birthday is 04-28-1973
