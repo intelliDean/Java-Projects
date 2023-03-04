@@ -1,6 +1,1 @@
-A regular expression (sometimes called a rational expression)
-is a sequence of characters that define a search pattern,
-mainly for use in pattern matching with strings, or string matching,
-i.e. find and replace-like operations.(Wikipedia). Regular expressions
-are a generalized way to match patterns with sequences of characters.
-It is used in every programming language like C++, Java and Python.
+this is the file i want to write to

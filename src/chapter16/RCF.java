@@ -42,6 +42,6 @@ public class RCF {
         }
 
         System.out.printf("%nMax: %s", Collections.max(listRef));
-        System.out.printf(" Min: %s%n", Collections.min(listRef));
+        System.out.printf(" Main: %s%n", Collections.min(listRef));
     }
 }

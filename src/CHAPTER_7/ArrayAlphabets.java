@@ -3,12 +3,14 @@ package CHAPTER_7;
 public class ArrayAlphabets {
     public static void main(String[] args) {
 
-        alphArray();
+        alphaArray();
+        System.out.println("\n");
+        printAlpha();
     }
-    public static void alphArray() {
+    public static void alphaArray() {
         char[] chArray = new char[26]; //instantiation of second char array
         int index = 0;
-        for (char i = 'a'; i <= 'z'; i++) { //Assiging char values to second array using loop
+        for (char i = 'a'; i <= 'z'; i++) { //Assigning char values to second array using loop
             chArray[index] = i;
             index++;
         }
@@ -18,6 +20,13 @@ public class ArrayAlphabets {
                 System.out.println();
             }
         }
-       // return chArray;
+    }
+    public static void printAlpha(){
+        for (char i = 'a'; i <= 'z'; i++) {
+            System.out.print(i+"  ");
+            if (i == 'm'){
+                System.out.println();
+            }
+        }
     }
 }

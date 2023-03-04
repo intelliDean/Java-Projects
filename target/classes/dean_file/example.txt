@@ -1,0 +1,7 @@
+Color picker – Choose a color in the input field to get its Hex and RGB code and a code snippet to use for styling.
+Characters – Retreive the most common character codes or look around in the full list of thousands of characters organized in categories.
+Tags – The most common HTML tags presented with examples.
+Structures – Block of codes consisting of more tags which are always used together: table, list, definition list and form.
+I just want to use this thing to test the update
+if it is working that means the update is working
+i know it is working already sha

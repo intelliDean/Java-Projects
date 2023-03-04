@@ -4,7 +4,7 @@ public class ArrayBinarySearch {
     public static void main(String[] args) {
         int[] arrays = {5, 12, 23, 23, 42, 53, 87, 90};
 
-        int search = binarySearch(arrays, 53);
+        int search = binarySearch(arrays, 90);
         System.out.println(search);
     }
 

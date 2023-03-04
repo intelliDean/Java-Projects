@@ -19,7 +19,7 @@ public class StreamArray {
         // count, min, max, sum and average of the values
         System.out.printf("%nCount: %d%n", IntStream.of(values).count());
         //System.out.println(IntStream.of(12,89,98,900,654).map(x -> x * x).map(x->x*2).filter(x->x>45).mapToObj(String::valueOf).collect(Collectors.joining(" ")));
-        System.out.printf("Min: %d%n",
+        System.out.printf("Main: %d%n",
                 IntStream.of(values).min().getAsInt());
         System.out.printf("Max: %d%n",
                 IntStream.of(values).max().getAsInt());
